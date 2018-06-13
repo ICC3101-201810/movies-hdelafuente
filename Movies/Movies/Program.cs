@@ -17,9 +17,9 @@ namespace Movies
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Form1 a = new Form1();
-            /*a.Show();
+            a.Show();
             System.Threading.Thread.Sleep(5000);
-            a.Close();*/
+            a.Close();
             Application.Run(new Searcher());
             
         }
