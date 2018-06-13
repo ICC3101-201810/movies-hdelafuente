@@ -22,6 +22,8 @@ namespace Movies
         public Searcher()
         {
             InitializeComponent();
+            data = BaseDeDatos.Deserialize_Product("BaseDeDatos.bin");
+            PanelCriticas.Visible = false;
         }
         private void SearchBar_TextChanged(object sender, EventArgs e)
         {
@@ -180,6 +182,13 @@ namespace Movies
                 Texto_Perfil.Text += "\nEstudio: " + OutPe[index].estudio.nombre;
                 Texto_Perfil.Text += "\nPresupuesto: " + OutPe[index].presupuesto;
                 Texto_Perfil.Text += "\nDescripcion: " + OutPe[index].descripcion;
+                Texto_Perfil.Text += "\n       Algunas criticas\n";
+                foreach(Critica crit in OutPe[index].criticas)
+                {
+                    Texto_Perfil.Text += crit.nombre_emisor + ":\n";
+                    Texto_Perfil.Text += "' " + crit.mensaje + " '\n";
+                }
+
                 goto Lugar;
             }
             catch { }
@@ -192,11 +201,32 @@ namespace Movies
                 Texto_Perfil.Text += "\nFecha de apretura: " + OutS[index].fecha_apertura;
                 goto Lugar;
             }
-            catch
-            {
-            }
+            catch { }
             Lugar:
-            Console.WriteLine("");
+            Console.WriteLine("Easter Egg");
+        }
+
+        private void PanelCriticas_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Boton_Criticas_Click(object sender, EventArgs e)
+        {
+            PanelCriticas.Visible = true;
+            Perfil.Visible = false;
+        }
+
+        private void Send_Click_1(object sender, EventArgs e)
+        {
+            string nombre = BoxNombre.Text;
+            string mensaje = BoxMensaje.Text;
+            int index = ListView.FocusedItem.Index;
+            Pelicula.RecibeCritica(nombre, mensaje, OutPe[index]);
+            BaseDeDatos.Serialize_Product("BaseDeDatos.bin", data);
+            PanelCriticas.Visible = false;
+            Perfil.Visible = true;
+            Perfil.Refresh();
         }
     }
 }

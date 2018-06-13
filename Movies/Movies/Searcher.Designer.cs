@@ -36,8 +36,14 @@
             this.SearchProducer = new System.Windows.Forms.Button();
             this.ListView = new System.Windows.Forms.ListView();
             this.Perfil = new System.Windows.Forms.Panel();
+            this.Boton_Criticas = new System.Windows.Forms.Button();
             this.Texto_Perfil = new System.Windows.Forms.Label();
+            this.PanelCriticas = new System.Windows.Forms.Panel();
+            this.BoxNombre = new System.Windows.Forms.TextBox();
+            this.BoxMensaje = new System.Windows.Forms.TextBox();
+            this.Send = new System.Windows.Forms.Button();
             this.Perfil.SuspendLayout();
+            this.PanelCriticas.SuspendLayout();
             this.SuspendLayout();
             // 
             // SearchBar
@@ -111,11 +117,22 @@
             // Perfil
             // 
             this.Perfil.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.Perfil.Controls.Add(this.Boton_Criticas);
             this.Perfil.Controls.Add(this.Texto_Perfil);
-            this.Perfil.Location = new System.Drawing.Point(471, 37);
+            this.Perfil.Location = new System.Drawing.Point(458, 37);
             this.Perfil.Name = "Perfil";
             this.Perfil.Size = new System.Drawing.Size(235, 371);
             this.Perfil.TabIndex = 8;
+            // 
+            // Boton_Criticas
+            // 
+            this.Boton_Criticas.Location = new System.Drawing.Point(89, 329);
+            this.Boton_Criticas.Name = "Boton_Criticas";
+            this.Boton_Criticas.Size = new System.Drawing.Size(75, 23);
+            this.Boton_Criticas.TabIndex = 1;
+            this.Boton_Criticas.Text = "Dejar Critica";
+            this.Boton_Criticas.UseVisualStyleBackColor = true;
+            this.Boton_Criticas.Click += new System.EventHandler(this.Boton_Criticas_Click);
             // 
             // Texto_Perfil
             // 
@@ -126,11 +143,51 @@
             this.Texto_Perfil.TabIndex = 0;
             this.Texto_Perfil.Text = "Seleccione un objeto \npara mostrar su perfil";
             // 
+            // PanelCriticas
+            // 
+            this.PanelCriticas.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.PanelCriticas.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.PanelCriticas.Controls.Add(this.Send);
+            this.PanelCriticas.Controls.Add(this.BoxMensaje);
+            this.PanelCriticas.Controls.Add(this.BoxNombre);
+            this.PanelCriticas.Location = new System.Drawing.Point(699, 37);
+            this.PanelCriticas.Name = "PanelCriticas";
+            this.PanelCriticas.Size = new System.Drawing.Size(200, 371);
+            this.PanelCriticas.TabIndex = 9;
+            // 
+            // BoxNombre
+            // 
+            this.BoxNombre.Location = new System.Drawing.Point(20, 22);
+            this.BoxNombre.Name = "BoxNombre";
+            this.BoxNombre.Size = new System.Drawing.Size(100, 20);
+            this.BoxNombre.TabIndex = 0;
+            this.BoxNombre.Text = "Nombre";
+            // 
+            // BoxMensaje
+            // 
+            this.BoxMensaje.Location = new System.Drawing.Point(20, 48);
+            this.BoxMensaje.Multiline = true;
+            this.BoxMensaje.Name = "BoxMensaje";
+            this.BoxMensaje.Size = new System.Drawing.Size(161, 271);
+            this.BoxMensaje.TabIndex = 1;
+            this.BoxMensaje.Text = "Critica...";
+            // 
+            // Send
+            // 
+            this.Send.Location = new System.Drawing.Point(106, 329);
+            this.Send.Name = "Send";
+            this.Send.Size = new System.Drawing.Size(75, 23);
+            this.Send.TabIndex = 2;
+            this.Send.Text = "Enviar";
+            this.Send.UseVisualStyleBackColor = true;
+            this.Send.Click += new System.EventHandler(this.Send_Click_1);
+            // 
             // Searcher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(724, 420);
+            this.ClientSize = new System.Drawing.Size(906, 420);
+            this.Controls.Add(this.PanelCriticas);
             this.Controls.Add(this.Perfil);
             this.Controls.Add(this.ListView);
             this.Controls.Add(this.SearchProducer);
@@ -144,6 +201,8 @@
             this.Text = "Buscador";
             this.Perfil.ResumeLayout(false);
             this.Perfil.PerformLayout();
+            this.PanelCriticas.ResumeLayout(false);
+            this.PanelCriticas.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -160,5 +219,10 @@
         private System.Windows.Forms.ListView ListView;
         private System.Windows.Forms.Panel Perfil;
         private System.Windows.Forms.Label Texto_Perfil;
+        private System.Windows.Forms.Button Boton_Criticas;
+        private System.Windows.Forms.Panel PanelCriticas;
+        private System.Windows.Forms.Button Send;
+        private System.Windows.Forms.TextBox BoxMensaje;
+        private System.Windows.Forms.TextBox BoxNombre;
     }
 }
