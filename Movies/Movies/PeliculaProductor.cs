@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Movies
 {
     [Serializable]
-    class PeliculaProductor
+    public class PeliculaProductor
     {
         Productor productor;
         Pelicula pelicula;

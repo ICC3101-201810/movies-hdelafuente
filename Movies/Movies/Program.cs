@@ -14,9 +14,6 @@ namespace Movies
         [STAThread]
         static void Main()
         {
-            BaseDeDatos data = new BaseDeDatos();
-            data.Fill();
-            PersistenciaInfo<BaseDeDatos>.Serialize_Product("BaseDeDatos.bin", data);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Form1 a = new Form1();

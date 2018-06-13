@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Movies
 {
@@ -19,6 +22,7 @@ namespace Movies
 
         public BaseDeDatos()
         {
+            this.Fill();
         }
 
         public void Fill()
@@ -41,12 +45,12 @@ namespace Movies
             productores.Add(new Productor("productor 5", "apellido 5", new DateTime(1935, 7, 23), "esta loco"));
 
             estudios.Add(new Estudio("Universal Studios", "Carmen 124", new DateTime(1945, 12, 4)));
-            estudios.Add(new Estudio("Universal Studios copia 1", "San Diego 24", new DateTime(1990, 2, 6)));
-            estudios.Add(new Estudio("Universal Studios copia 2", "Santa Isabel 12", new DateTime(1955, 1, 4)));
+            estudios.Add(new Estudio("Warner Bros.", "San Diego 24", new DateTime(1990, 2, 6)));
+            estudios.Add(new Estudio("Metro-Goldwyn-Mayer", "Santa Isabel 12", new DateTime(1955, 1, 4)));
 
-            peliculas.Add(new Pelicula("sharknado 1", directores[0], new DateTime(2001, 1, 13), "malismia", 10000000, estudios[0]));
-            peliculas.Add(new Pelicula("sharknado 2", directores[1], new DateTime(2001, 1, 13), "malismia", 15000000, estudios[1]));
-            peliculas.Add(new Pelicula("sharknado 3", directores[2], new DateTime(2001, 1, 13), "malismia", 20000000, estudios[2]));
+            peliculas.Add(new Pelicula("Sharknado 1", directores[0], new DateTime(2001, 1, 13), "malismia", 10000000, estudios[0]));
+            peliculas.Add(new Pelicula("Sharknado 2", directores[1], new DateTime(2001, 1, 13), "malismia", 15000000, estudios[1]));
+            peliculas.Add(new Pelicula("Sharknado 3", directores[2], new DateTime(2001, 1, 13), "malismia", 20000000, estudios[2]));
 
             PeliculaActors.Add(new PeliculaActor(actores[0], peliculas[0]));
             PeliculaActors.Add(new PeliculaActor(actores[1], peliculas[0]));
@@ -71,6 +75,48 @@ namespace Movies
             PeliculaProductors.Add(new PeliculaProductor(productores[2], peliculas[2]));
             PeliculaProductors.Add(new PeliculaProductor(productores[3], peliculas[2]));
             PeliculaProductors.Add(new PeliculaProductor(productores[4], peliculas[2]));
+
+        }
+
+        public static void Serialize_Product(string file_name, BaseDeDatos lista)
+        {
+            string file = @"..\..\" + file_name;
+            try
+            {
+                string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, file);
+                using (Stream stream = File.Open(path, FileMode.Create))
+                {
+                    BinaryFormatter bin = new BinaryFormatter();
+                    bin.Serialize(stream, lista);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+        }
+
+        public static BaseDeDatos Deserialize_Product(string file_name)
+        {
+            BaseDeDatos output;
+            string file = @"..\..\" + file_name;
+            try
+            {
+                string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, file);
+                using (Stream stream = File.Open(path, FileMode.Open))
+                {
+                    BinaryFormatter bin = new BinaryFormatter();
+
+                    output = (BaseDeDatos)bin.Deserialize(stream);
+                }
+                return output;
+            }
+            catch (Exception e)
+            {
+                output = new BaseDeDatos();
+                return output;
+            }
 
         }
 

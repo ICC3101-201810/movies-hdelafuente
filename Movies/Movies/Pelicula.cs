@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 namespace Movies
 {
     [Serializable]
-    class Pelicula
+    public class Pelicula
     {
-        string nombre;
+        public string nombre;
         Persona director;
         DateTime fecha_estreno;
         string descripcion;

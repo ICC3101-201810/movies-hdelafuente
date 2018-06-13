@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Movies
 {
-    class Estudio
+    public class Estudio
     {
-        string nombre;
+        public string nombre;
         string direccion;
         DateTime fecha_apertura;
 

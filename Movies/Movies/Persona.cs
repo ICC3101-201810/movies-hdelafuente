@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Movies
 {
     [Serializable]
-    class Persona
+    public class Persona
     {
         public string nombre;
         public string apellido;

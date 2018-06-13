@@ -57,7 +57,6 @@
     </Compile>
     <Compile Include="Pelicula.cs" />
     <Compile Include="PeliculaActor.cs" />
-    <Compile Include="PersistenciaInfo.cs" />
     <Compile Include="Persona.cs" />
     <Compile Include="PeliculaProductor.cs" />
     <Compile Include="Productor.cs" />

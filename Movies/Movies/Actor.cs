@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Movies
 {
     [Serializable]
-    class Actor : Persona
+    public class Actor : Persona
     {
         public Actor(string nombre, string apellido, DateTime fecha_nacimiento, string biografia) : base(nombre, apellido, fecha_nacimiento, biografia)
         {

@@ -34,7 +34,6 @@
             this.SearchDirector = new System.Windows.Forms.Button();
             this.SearchStudio = new System.Windows.Forms.Button();
             this.SearchProducer = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.ListView = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
@@ -55,6 +54,7 @@
             this.SearchMovies.TabIndex = 1;
             this.SearchMovies.Text = "Peliculas";
             this.SearchMovies.UseVisualStyleBackColor = true;
+            this.SearchMovies.Click += new System.EventHandler(this.SearchMovies_Click);
             // 
             // SearchActors
             // 
@@ -64,6 +64,7 @@
             this.SearchActors.TabIndex = 2;
             this.SearchActors.Text = "Actores";
             this.SearchActors.UseVisualStyleBackColor = true;
+            this.SearchActors.Click += new System.EventHandler(this.SearchActors_Click);
             // 
             // SearchDirector
             // 
@@ -92,22 +93,14 @@
             this.SearchProducer.Text = "Productor";
             this.SearchProducer.UseVisualStyleBackColor = true;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(201, 106);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Search";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // ListView
             // 
-            this.ListView.Location = new System.Drawing.Point(39, 135);
+            this.ListView.Location = new System.Drawing.Point(39, 106);
             this.ListView.Name = "ListView";
-            this.ListView.Size = new System.Drawing.Size(399, 273);
+            this.ListView.Size = new System.Drawing.Size(399, 302);
             this.ListView.TabIndex = 7;
             this.ListView.UseCompatibleStateImageBehavior = false;
+            this.ListView.SelectedIndexChanged += new System.EventHandler(this.ListView_SelectedIndexChanged);
             // 
             // Searcher
             // 
@@ -115,7 +108,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(457, 420);
             this.Controls.Add(this.ListView);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.SearchProducer);
             this.Controls.Add(this.SearchStudio);
             this.Controls.Add(this.SearchDirector);
@@ -138,7 +130,6 @@
         private System.Windows.Forms.Button SearchDirector;
         private System.Windows.Forms.Button SearchStudio;
         private System.Windows.Forms.Button SearchProducer;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ListView ListView;
     }
 }
