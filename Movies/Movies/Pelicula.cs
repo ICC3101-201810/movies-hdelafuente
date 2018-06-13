@@ -10,11 +10,11 @@ namespace Movies
     public class Pelicula
     {
         public string nombre;
-        Persona director;
-        DateTime fecha_estreno;
-        string descripcion;
-        int presupuesto;
-        Estudio estudio;
+        public Persona director;
+        public DateTime fecha_estreno;
+        public string descripcion;
+        public int presupuesto;
+        public Estudio estudio;
 
         public Pelicula(string nombre, Persona director, DateTime fecha_estreno, string descripcion, int presupuesto, Estudio estudio)
         {

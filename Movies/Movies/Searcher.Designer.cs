@@ -35,6 +35,9 @@
             this.SearchStudio = new System.Windows.Forms.Button();
             this.SearchProducer = new System.Windows.Forms.Button();
             this.ListView = new System.Windows.Forms.ListView();
+            this.Perfil = new System.Windows.Forms.Panel();
+            this.Texto_Perfil = new System.Windows.Forms.Label();
+            this.Perfil.SuspendLayout();
             this.SuspendLayout();
             // 
             // SearchBar
@@ -74,6 +77,7 @@
             this.SearchDirector.TabIndex = 3;
             this.SearchDirector.Text = "Directores";
             this.SearchDirector.UseVisualStyleBackColor = true;
+            this.SearchDirector.Click += new System.EventHandler(this.SearchDirector_Click);
             // 
             // SearchStudio
             // 
@@ -83,6 +87,7 @@
             this.SearchStudio.TabIndex = 4;
             this.SearchStudio.Text = "Estudios";
             this.SearchStudio.UseVisualStyleBackColor = true;
+            this.SearchStudio.Click += new System.EventHandler(this.SearchStudio_Click);
             // 
             // SearchProducer
             // 
@@ -92,6 +97,7 @@
             this.SearchProducer.TabIndex = 5;
             this.SearchProducer.Text = "Productor";
             this.SearchProducer.UseVisualStyleBackColor = true;
+            this.SearchProducer.Click += new System.EventHandler(this.SearchProducer_Click);
             // 
             // ListView
             // 
@@ -102,11 +108,30 @@
             this.ListView.UseCompatibleStateImageBehavior = false;
             this.ListView.SelectedIndexChanged += new System.EventHandler(this.ListView_SelectedIndexChanged);
             // 
+            // Perfil
+            // 
+            this.Perfil.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.Perfil.Controls.Add(this.Texto_Perfil);
+            this.Perfil.Location = new System.Drawing.Point(471, 37);
+            this.Perfil.Name = "Perfil";
+            this.Perfil.Size = new System.Drawing.Size(235, 371);
+            this.Perfil.TabIndex = 8;
+            // 
+            // Texto_Perfil
+            // 
+            this.Texto_Perfil.AutoSize = true;
+            this.Texto_Perfil.Location = new System.Drawing.Point(18, 20);
+            this.Texto_Perfil.Name = "Texto_Perfil";
+            this.Texto_Perfil.Size = new System.Drawing.Size(110, 26);
+            this.Texto_Perfil.TabIndex = 0;
+            this.Texto_Perfil.Text = "Seleccione un objeto \npara mostrar su perfil";
+            // 
             // Searcher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(457, 420);
+            this.ClientSize = new System.Drawing.Size(724, 420);
+            this.Controls.Add(this.Perfil);
             this.Controls.Add(this.ListView);
             this.Controls.Add(this.SearchProducer);
             this.Controls.Add(this.SearchStudio);
@@ -117,6 +142,8 @@
             this.Name = "Searcher";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Buscador";
+            this.Perfil.ResumeLayout(false);
+            this.Perfil.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -131,5 +158,7 @@
         private System.Windows.Forms.Button SearchStudio;
         private System.Windows.Forms.Button SearchProducer;
         private System.Windows.Forms.ListView ListView;
+        private System.Windows.Forms.Panel Perfil;
+        private System.Windows.Forms.Label Texto_Perfil;
     }
 }

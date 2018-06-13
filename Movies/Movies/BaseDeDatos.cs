@@ -27,26 +27,26 @@ namespace Movies
 
         public void Fill()
         {
-            directores.Add(new Director("director 1", "apellido director 1", new DateTime(1987, 2, 25), "buen director"));
+            directores.Add(new Director("Santley", "Kubrick", new DateTime(1928, 6, 28), "buen director"));
             directores.Add(new Director("director 2", "apellido director 2", new DateTime(1985, 7, 15), "mal director"));
             directores.Add(new Director("director 3", "apellido director 3", new DateTime(1977, 11, 5), "ahi nomas como director"));
             directores.Add(new Director("director 4", "apellido director 4", new DateTime(1967, 3, 22), "excelente director"));
 
-            actores.Add(new Actor("actor 1", "apellido 1", new DateTime(1997, 9, 2), "buen actor"));
-            actores.Add(new Actor("actor 2", "apellido 2", new DateTime(1967, 4, 21), "buen actor"));
-            actores.Add(new Actor("actor 3", "apellido 3", new DateTime(1987, 1, 20), "buen actor"));
+            actores.Add(new Actor("Dwayne", "Jhonson", new DateTime(1997, 9, 2), "la roca"));
+            actores.Add(new Actor("Paul", "Walker", new DateTime(1967, 4, 21), "rip"));
+            actores.Add(new Actor("Kevin", "Hart", new DateTime(1987, 1, 20), "buen actor"));
             actores.Add(new Actor("actor 4", "apellido 4", new DateTime(1927, 2, 25), "buen actor"));
             actores.Add(new Actor("actor 5", "apellido 5", new DateTime(1947, 11, 1), "buen actor"));
 
-            productores.Add(new Productor("productor 1", "apellido 1", new DateTime(1934, 2, 13), "esta muertisimo"));
-            productores.Add(new Productor("productor 2", "apellido 2", new DateTime(1944, 1, 1), "no tiene plata"));
+            productores.Add(new Productor("Carlo", "Vidale", new DateTime(1934, 2, 13), "biografia xd"));
+            productores.Add(new Productor("productor", "apellido 2", new DateTime(1944, 1, 1), "penquita este men"));
             productores.Add(new Productor("productor 3", "apellido 3", new DateTime(1974, 12, 3), "es pesado"));
             productores.Add(new Productor("productor 4", "apellido 4", new DateTime(1984, 4, 3), "es drogadicto"));
             productores.Add(new Productor("productor 5", "apellido 5", new DateTime(1935, 7, 23), "esta loco"));
 
-            estudios.Add(new Estudio("Universal Studios", "Carmen 124", new DateTime(1945, 12, 4)));
-            estudios.Add(new Estudio("Warner Bros.", "San Diego 24", new DateTime(1990, 2, 6)));
-            estudios.Add(new Estudio("Metro-Goldwyn-Mayer", "Santa Isabel 12", new DateTime(1955, 1, 4)));
+            estudios.Add(new Estudio("Universal Studios", "alguna calle en eeuu", new DateTime(1945, 12, 4)));
+            estudios.Add(new Estudio("Warner Bros.", "Berna 4751", new DateTime(1990, 2, 6)));
+            estudios.Add(new Estudio("Metro-Goldwyn-Mayer", "San Carlo'", new DateTime(1955, 1, 4)));
 
             peliculas.Add(new Pelicula("Sharknado 1", directores[0], new DateTime(2001, 1, 13), "malismia", 10000000, estudios[0]));
             peliculas.Add(new Pelicula("Sharknado 2", directores[1], new DateTime(2001, 1, 13), "malismia", 15000000, estudios[1]));

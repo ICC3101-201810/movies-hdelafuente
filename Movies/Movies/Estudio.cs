@@ -9,8 +9,8 @@ namespace Movies
     public class Estudio
     {
         public string nombre;
-        string direccion;
-        DateTime fecha_apertura;
+        public string direccion;
+        public DateTime fecha_apertura;
 
         public Estudio(string nombre, string direccion, DateTime fecha_apertura)
         {

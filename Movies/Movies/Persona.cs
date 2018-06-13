@@ -11,8 +11,8 @@ namespace Movies
     {
         public string nombre;
         public string apellido;
-        DateTime fecha_nacimiento;
-        string biografia;
+        public DateTime fecha_nacimiento;
+        public string biografia;
 
     public Persona(string nombre, string apellido, DateTime fecha_nacimiento, string biografia)
         {
